@@ -1,0 +1,32 @@
+{
+  "name": "text-underless",
+  "version": "1.0.0",
+  "description": "A css/less/sass snippet for nice links underlining.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vitaliysiroshtan/text-underless.git"
+  },
+  "keywords": [
+    "snippet",
+    "links",
+    "less",
+    "sass",
+    "css"
+  ],
+  "author": "Vitaliy Siroshtan <vit@vitaliysiroshtan.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitaliysiroshtan/text-underless/issues"
+  },
+  "homepage": "https://github.com/vitaliysiroshtan/text-underless",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-less-sourcemap": "^1.4.3",
+    "less-plugin-autoprefix": "^1.5.1"
+  }
+}

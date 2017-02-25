@@ -1,12 +1,18 @@
 # text-underless
-A css/less/sass snippet for nice links underlining.
+A css/less/sass snippet for iOS-like links underlining.
 
 *Work in progress*
 
-## Why
+## Summary
 Links should be underlined, but `text-decoration: underline` sucks.
 
+## Why
+
+
 Snippet is built using semi-transparent gradient background instead of `text-decoration: underline` or `border-bottom: 1px solid` which both produce disgusting results obtrusing descenders, tails, and loops of the lowercase letters and numerals.
+
+Hairline has color same as text and can have configured opacity.
+White outline of `text-shadow` make descenders look like they are cutting out the underline, similar to iOS link rendering. That outline will require easy additional configuration, if you are going to use it on other backgrounds.
 
 ## Installation
 –
