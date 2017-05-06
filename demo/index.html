@@ -4,16 +4,18 @@
     <head>
 
         <title>
-            text-underless demo
+            text-underless demo – a css/less/sass snippet for iOS-like links underlining
         </title>
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
         <meta name="description" content="A css/less/sass snippet for iOS-like links underlining.">
         <meta name="keywords" content="snippet, less, css, text-underline">
+        <meta name="author" content="Vitaliy Siroshtan, vit@vitaliysiroshtan.com">
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400%7CMerriweather:300,400">
         <link rel="stylesheet" href="demo.css" media="all">
         <link rel="stylesheet" href="../css/links.css" media="all">
 
@@ -21,10 +23,23 @@
 
     <body>
 
+        <div class="black intro">
+            <div class="container">
+                <span class="smallcaps pull-right">
+                    <a href="https://github.com/vitaliysiroshtan/text-underless" class="link-white">
+                        Download
+                    </a>
+                </span>
+                <h1>
+                    CSS/LESS styles for iOS-like <span class="link-white"><u>links underlining in&nbsp;desktop browsers</u></span>
+                </h1>
+            </div>
+        </div>
+
         <div class="container">
             <p>
                 <span class="regular">
-                    <a href="#">Regular</a>
+                    <a href="#">Regular underline</a>
                 </span>
                 <span class="nice">
                     <a href="#" class="link-blue">Better than regular</a>
@@ -36,64 +51,80 @@
                     <a href="#" style="font-size:30px;">Regular typography</a>
                 </span>
                 <span class="nice">
-                    <a href="#" style="font-size:30px;" class="link-blue">Better than regular</a>
+                    <a href="#" style="font-size:30px;" class="link-blue">Bit better than regular</a>
                 </span>
             </p>
-            
-            <p>
-                <span class="regular">
-                    <a href="#">„Quoted“</a>
-                </span>
-                <span class="nice">
-                    <a href="#" class="link-blue extra-symbol">„<u>Quoted</u>“</a>
-                </span>
-            </p>
-            
-            <p>
-                <span class="regular">
-                    <span class=reload>&#x21bb;</span> <a href="#">Refresh</a>
-                </span>
-                <span class="nice">
-                    <button class="semilink extra-symbol link-blue"><span class=reload>&#x21bb;</span> <u>Refresh</u></button>
-                </span>
-            </p>
-            
-         
-            <blockquote>
-                “The Answer?” said <a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker's_Guide_to_the_Galaxy">Deep Thought</a>. “The Answer to what?”<br>
-                “<a href="https://www.google.com/search?q=question+of+life+the+universe+and+everything">Life</a>!” urged Fook.<br>
-                “The Universe!” said Lunkwill.<br>
-                <a href="https://www.google.com/">“Everything!”</a> they said in chorus.
-            </blockquote>
 
-            <blockquote>
-                “The Answer?” said <a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker's_Guide_to_the_Galaxy" class="link-blue extra-symbol"><u>Deep Thought</u>.</a> “The Answer to what?”<br>
-                <a href="https://www.google.com/search?q=question+of+life+the+universe+and+everything" class="link-blue extra-symbol">“<u>Life</u>!”</a> urged Fook.<br>
-                “The Universe!” said Lunkwill.<br>
-                <a href="https://www.google.com/" class="link-blue extra-symbol">“<u>Everything</u>!”</a> they said in chorus.
-            </blockquote>
-            
-            
-            
-            
-            
-            
+            <p>
+                <span class="regular">
+                    “<a href="#">Quoted</a>”
+                </span>
+                <span class="nice">
+                    <a href="#" class="link-blue extra-symbol">“<u>Quoted</u>”</a>
+                </span>
+            </p>
+
+            <p>
+                <span class="regular">
+                    <span class="reload">&#x21bb;</span> <a href="#">Refresh</a>
+                </span>
+                <span class="nice">
+                    <button class="semilink extra-symbol link-blue"><span class="reload">&#x21bb;</span> <u>Refresh</u></button> &nbsp;&nbsp;
+                    <button class="semilink extra-symbol link-secondary"><span class="reload">&times;</span> <u>Close</u></button>
+                </span>
+            </p>
+
+            <section class="row quotes">
+                <div class="col-50">
+                    <span class="smallcaps">Regular Links</span>
+                    <blockquote>
+                        “The Answer?” said <a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker's_Guide_to_the_Galaxy">Deep Thought</a>. “The Answer to what?”<br>
+                        “<a href="https://www.google.com/search?q=question+of+life+the+universe+and+everything">Life</a>!” urged Fook.<br>
+                        “The Universe!” said Lunkwill.<br>
+                        <a href="https://www.google.com/">“Everything!”</a> they said in chorus.
+                    </blockquote>
+                </div>
+                <div class="col-50">
+                    <span class="smallcaps">Underlined links with punctuation</span>
+                    <blockquote>
+                        “The Answer?” said <a href="https://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker's_Guide_to_the_Galaxy" class="link-blue extra-symbol"><u>Deep Thought</u>.</a> “The Answer to what?”<br>
+                        <a href="https://www.google.com/search?q=question+of+life+the+universe+and+everything" class="link-blue extra-symbol">“<u>Life</u>!”</a> urged Fook.<br>
+                        “The Universe!” said Lunkwill.<br>
+                        <a href="https://www.google.com/" class="link-blue extra-symbol">“<u>Everything</u>!”</a> they said in chorus.
+                    </blockquote>
+                </div>
+            </section>
+            <section class="row black">
+                <div class="col-50 white-on-black">
+                    <span class="smallcaps">White Links</span>
+                    <a href="https://en.wikipedia.org/wiki/De_Stijl">De Stijl</a> ∙
+                    <a href="https://en.wikipedia.org/wiki/Purism">Purism</a> ∙
+                    <a href="https://en.wikipedia.org/wiki/Bauhaus">Bauhaus</a> ∙
+                    <a href="https://en.wikipedia.org/wiki/New_Objectivity">New Objectivity</a> ∙
+                    <a href="https://en.wikipedia.org/wiki/Avant-garde">Avant-garde</a>
+                </div>
+                <div class="col-50">
+                    <span class="smallcaps">Underlined white links</span>
+                    <a href="https://en.wikipedia.org/wiki/De_Stijl" class="link-white">De Stijl</a> ∙
+                    <a href="https://en.wikipedia.org/wiki/Purism" class="link-white">Purism</a> ∙
+                    <a href="https://en.wikipedia.org/wiki/Bauhaus" class="link-white">Bauhaus</a> ∙
+                    <a href="https://en.wikipedia.org/wiki/Avant-garde" class="link-white">Avant-garde</a> ∙
+                    <a href="#" class="semilink link-white">more</a>
+                </div>
+            </section>
         </div>
 
         <footer class="pagefooter">
             <div class="container">
-                © 2017
+                <a href="https://github.com/vitaliysiroshtan/text-underless" class="link-secondary pull-right">
+                    View on GitHub
+                </a>
                 <span itemscope itemtype="http://schema.org/Person">
                     <meta itemprop="jobTitle" content="Designer">
                     <meta itemprop="email" content="vit@vitaliysiroshtan.com">
                     <meta itemprop="image" content="http://vitaliysiroshtan.com/img/photo-300-full.png">
                     Made by
-                    <a href="http://vitaliysiroshtan.com" rel="author" class="link-secondary" target="_blank" itemprop="url">
-                        <span itemprop="name">
-                            <link itemprop="sameAs" href="https://www.linkedin.com/in/vitaliysiroshtan">
-                            Vitaliy Siroshtan
-                        </span>
-                    </a>
+                    <a href="http://vitaliysiroshtan.com" class="link-secondary">Vitaliy Siroshtan</a>, 2017
                 </span>
             </div>
         </footer>

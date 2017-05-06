@@ -1,44 +1,44 @@
-// Colors
+/*! text-underless v0.0.1 | MIT License | github.com/vitaliysiroshtan/text-underless */
 
-// replace with yours from variables.less
+// Colors (use yours)
 
-@link: #00a9e8;
-@link-hover: spin(@link, 180);
-@link-visited: lighten(desaturate(@link,60%), 20%);
-@link-secondary: desaturate(@link,100%);
+@link: #00a9e8; // some acid blue
+@link-hover: spin(@link, 180); // inverted color (red)
+@link-secondary: desaturate(@link,100%); // gray
 
-@main-background: white;
+@main-background: white; // body background
 
-@line-fade: 40%;
-@line-fade-hover: 80%;
-@line-position: 98%; // may require minor adjustments based on the typeface and font-size
+@line-fade: 40%; // decrease line weight/opacity
+@line-fade-hover: 80%; // increase line on hover
+@line-position: 96%; // may require minor adjustments based on the typeface and font-size
 
 
-// Mixins
 
-.underline(@color: @link) {
-  background-image: linear-gradient(fade(@color, @line-fade), fade(@color, @line-fade));
+// Mixin for underlined link
+
+.underline(@color: @link, @fade: @line-fade) {
+  background-image: linear-gradient(fade(@color, @fade), fade(@color, @fade));
   background-repeat: repeat-x;
   background-position: 0 @line-position;
   background-size: 1px 1px;
   text-decoration: none;
 }
 
-.underline-hover(@color: @link-hover) {
-  background-image: linear-gradient(@color, @color);
-  text-decoration: none;
+
+
+// Mixin for link underlined with dotted or dashed line (depends on background-size)
+
+.underdots(@color: @link, @fade: @line-fade*1.5) {
+  background-image: linear-gradient(to right, fade(@color, @fade) 0%, fade(@color, @fade) 50%, transparent 51%, transparent 100%);
+  background-size: 2px 1px;
 }
 
-.underdots(@color: @link) {
-  background-image: radial-gradient(circle, fade(@color, @line-fade-hover) 1px, transparent 1px);
-  background-size: 4px 1px;
-}
 
-.underdots-hover(@color: @link-hover) {
-  background-image: radial-gradient(circle, fade(@color, @line-fade-hover) 1px, transparent 1px);
-}
 
-// make descenders look like they are cutting out the underline, similar to iOS link rendering
+// Making descenders look like they are cutting out the underline
+// using the text-shadow colored with page background color.
+// (similar to iOS link rendering)
+
 .outline(@out) when (alpha(@out)>0) {
   text-shadow:
     0.08em 0 @out, -0.08em 0 @out, 0.08em 0 @out, -0.08em 0 @out,
@@ -46,42 +46,31 @@
 }
 
 
+
 // Link Constructor Mixin
 
 .link(@normal: @link, @hover: @link-hover, @background: transparent) {
   &,
-  &:link {
+  &:link,
+  &:visited {
     color: @normal;
     .underline(@normal);
     .outline(@background);
   }
-  
+
   &:hover,
   &:focus,
   &:active {
     color: @hover;
-    .underline-hover(@hover);
+    .underline(@hover, @line-fade-hover);
   }
-  
+
   u {
     .underline(@normal);
   }
 
   &:hover u {
-    .underline-hover(@hover);
-  }
-  
-  &.semilink {
-    .underdots(@normal);
-    
-    &:hover,
-    &:hover u {
-      .underdots-hover(@hover);
-    }
-
-    u {
-      .underdots(@normal);
-    }
+    .underline(@hover, @line-fade-hover);
   }
 
   &.extra-symbol {
@@ -89,14 +78,35 @@
     &:hover {
       background-image: none !important;
     }
+
+    &:hover,
+    &:focus,
+    &:active {
+      u {
+        .underline(@hover, @line-fade-hover);
+      }
+    }
+  }
+
+  &.semilink {
+    &, u {
+      .underdots(@normal);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &, u {
+        .underdots(@hover);
+      }
+    }
   }
 }
 
 
-// Default Link
 
-// Use a{.link;} to make all links underlined by default.
-// Not recommended.
+// Default Link
+// Use a {.link;} to make all links underlined by default (not recommended)
 
 a,
 .semilink {
@@ -105,33 +115,26 @@ a,
   outline: 0px dotted;
   outline-offset: 10px;
   transition: all 0.2s ease;
-  
-  // use for documentation, news, catalogs
-  &:visited {
-    color: @link-visited;
-  }
-  
-  &:hover,
-  &:visited:hover {
+
+  &:hover {
     color: @link-hover;
   }
 
   &:focus {
     color: @link-hover;
     outline-width: 1px;
-    outline-offset: 2px;
+    outline-offset: 2px; // animate the outline
   }
 
   &:active {
     outline: 0;
   }
-
 }
 
 
-// Underlined Links
 
-// Create any other color combinations.
+// Underlined Links
+// (you can create any color combinations)
 
 .link-blue {
   .link(@link, @link-hover, @main-background);
@@ -139,14 +142,20 @@ a,
 
 .link-secondary {
   .link(@link-secondary, @link-hover, @main-background);
+}
+
+.link-white {
+  .link(fade(white,80%), white, #222);
 
   &:visited {
-    color: @link-secondary;
+    color: fade(white,60%);
   }
 }
 
 
-// Remove text-shadow when selecting the text
+
+// Remove text-shadow outline when selecting the text.
+// TODO: try without it.
 
 ::selection {
   color: white;

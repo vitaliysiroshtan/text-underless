@@ -3,14 +3,38 @@
 body {
   margin: 0;
   padding: 0;
-  min-width: 300px;
+  min-width: 768px;
   background: white;
   color: #282828;
-  font: 16px/1.5 Arial, sans-serif;
+  font: 16px/1.5 'Fira Sans', 'Trebuchet MS', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .no-outline {
   text-shadow: none !important;
+}
+
+
+.intro {
+  padding: 100px 0 40px;
+  margin-bottom: 80px;
+}
+
+.intro .smallcaps {
+  margin-top: 8px;
+}
+
+.pull-right {
+  float: right;
+}
+
+h1 {
+  font: 300 24px/1.1 'Merriweather', Georgia, serif;
+  margin: 0 40px 0 0;
+}
+
+h1 .link-white {
+  cursor: default;
 }
 
 code {
@@ -19,18 +43,37 @@ code {
 }
 
 blockquote {
-  font-family: Georgia, serif;
-  font-style: italic;
-  padding: 8px 20px;
-  border-left: 2px solid rgba(192, 192, 192, 0.45);
+  font-family: 'Merriweather', Georgia, serif;
+  line-height: 1.7;
+  padding: 24px 32px 32px;
+  margin: 8px 8px 24px 0;
+  border: 2px solid rgba(192, 192, 192, 0.2);
+  border-radius: 4px;
 }
 
+.quotes {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.quotes .smallcaps {
+  margin-left: 34px;
+}
+
+.smallcaps {
+  font: 400 11px/1.5 'Fira Sans', 'Trebuchet MS', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+  display: block;
+  -webkit-font-smoothing: auto;
+}
 
 .container {
   margin: 0 auto;
   padding-right: 16px;
   padding-left: 16px;
-  max-width: 700px;
+  max-width: 1100px;
 }
 
 p {
@@ -43,27 +86,71 @@ p {
   display: inline-block;
   vertical-align: top;
   width: 40%;
-  padding: 0 2%;
+  padding: 0 32px;
 }
 
 .regular {
   text-align: right;
+  position: relative;
+}
+
+.regular:after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate3d(-40%,-50%,0);
+  color: #999;
 }
 
 .nice {
   text-align: left;
 }
 
-.reload { font-family: Lucida Sans Unicode }
+.reload {
+  font-family: 'Lucida Sans Unicode';
+  font-weight: bold;
+}
 
 button {
-  font: 16px/1 Arial, sans-serif;
+  font: 16px/1 'Fira Sans', 'Trebuchet MS', Arial, sans-serif;
   padding: 0;
   border: none;
   background-color: transparent;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row .col-50 {
+  flex-grow: 0;
+  flex-basis: 50%;
+}
+
+.black {
+  color: white;
+  background: #222;
+  border-radius: 4px;
+}
+
+.black .col-50 {
+  padding: 16px 32px 32px;
+}
+
+.white-on-black a,
+.white-on-black a:link,
+.white-on-black a:visited {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.white-on-black a:hover {
+  color: white;
+}
+
 footer {
   font-size: 14px;
   color: #999;
+  margin: 48px 0 96px;
 }
