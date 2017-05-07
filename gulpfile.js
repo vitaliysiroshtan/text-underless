@@ -16,16 +16,15 @@ gulp.task('compile', function() {
     .pipe(gulp.dest('css'));
 });
 
-gulp.task('minify', function() {
+gulp.task('makedemo', function() {
   gulp.src('css/links.css')
-    .pipe(cleancss({compatibility: 'ie8' }))
-    .pipe(gulp.dest('min'));
+    .pipe(gulp.dest('docs'));
 });
 
 gulp.task('watch', function() {
   gulp.watch('less/*.less', ['compile']);
 });
 
-gulp.task('default', ['compile', 'watch'], function() {
+gulp.task('default', ['compile', 'makedemo', 'watch'], function() {
 
 });
