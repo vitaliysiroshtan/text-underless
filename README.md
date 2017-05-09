@@ -1,4 +1,4 @@
-![text-underless-logo](https://cloud.githubusercontent.com/assets/3016427/25870545/1473e7d8-350d-11e7-82ed-478e1e72bb49.png)
+![logo2](https://cloud.githubusercontent.com/assets/3016427/25870705/bb99efbc-350d-11e7-8137-0a1c69856456.png)
 
 # text-underless
 A css/less/sass snippet for iOS-like links underlining.
@@ -8,7 +8,7 @@ A css/less/sass snippet for iOS-like links underlining.
 ## Summary
 Links should be underlined, but `text-decoration: underline` sucks.
 
-![Screenshot](https://cloud.githubusercontent.com/assets/3016427/25870468/dc99af82-350c-11e7-9fb5-132e9d48fb00.png)
+![shot](https://cloud.githubusercontent.com/assets/3016427/25870737/e71b429e-350d-11e7-897b-8ab61c263d53.png)
 
 ## Why
 
