@@ -42,6 +42,15 @@ code {
   font-size: 1em;
 }
 
+abbr {
+  font-variant-caps: all-small-caps;
+  -moz-font-feature-settings: "c2sc", "smcp";
+  -webkit-font-feature-settings: "c2sc", "smcp";
+  font-feature-settings: "c2sc", "smcp";
+  letter-spacing: 0.04em;
+  font-size: 130%;
+}
+
 blockquote {
   font-family: 'Merriweather', Georgia, serif;
   line-height: 1.7;
