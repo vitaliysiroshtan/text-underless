@@ -6,7 +6,7 @@ A css/less/sass snippet for iOS-like links underlining with cut-out line.
 *Work in progress*
 
 ## Summary
-Links should be underlined, but `text-decoration: underline` sucks.
+Links should be underlined, but `text-decoration: underline` sucks and `text-decoration-skip: ink` doesn't work everywhere or no one knows about it.
 
 ![shot](https://cloud.githubusercontent.com/assets/3016427/25870737/e71b429e-350d-11e7-897b-8ab61c263d53.png)
 
